@@ -4,7 +4,10 @@ from .models import Post, Comment
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
-
+    """
+    Lists fields for display in admin, fields for search,
+    field filters, fields to pre-populate and rich-text editor.
+    """
     list_display = ('title', 'slug', 'status', 'created_on')
     search_fields = ['title', 'content']
     list_filter = ('status', 'created_on')
